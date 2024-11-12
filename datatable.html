@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasa de homicidios de NNA de 0 a 17 años</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card-header {
+            cursor: pointer;
+        }
+        .icon {
+            width: 25px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h2>Tasa de homicidios de NNA de 0 a 17 años por cada 100,000 NNA, por estado</h2>
+        <div class="accordion" id="infoAccordion">
+            <!-- Section 1 -->
+            <div class="card">
+                <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <img src="path/to/icon1.png" class="icon"> ¿Qué mide y como lo leo?
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#infoAccordion">
+                    <div class="card-body">
+                        <p>Este indicador muestra el porcentaje del ingreso total que recibe cada decil de ingresos per cápita de una población. Los deciles son diez grupos...</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Section 2 -->
+            <div class="card">
+                <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <img src="path/to/icon2.png" class="icon"> ¿Cómo se construye?
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#infoAccordion">
+                    <div class="card-body">
+                        <p>Los deciles son aquellos puntos que permiten distribuir a una población en 10 grupos con el mismo número de integrantes...</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Section 3 -->
+            <div class="card">
+                <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <img src="path/to/icon3.png" class="icon"> ¿Para qué lo puedo utilizar?
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#infoAccordion">
+                    <div class="card-body">
+                        <p>Este indicador se utiliza para analizar la distribución de ingresos en una población y entender...</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Section 4 -->
+            <div class="card">
+                <div class="card-header" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <img src="path/to/icon4.png" class="icon"> Comportamiento regional del indicador
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#infoAccordion">
+                    <div class="card-body">
+                        <p>El comportamiento regional del indicador permite observar cómo varía la distribución de ingresos en diferentes regiones...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery and Bootstrap JS for Collapse functionality -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

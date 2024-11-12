@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIIVINA: Muuertes violentas</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: white; }
+        h2 { font-size: 1.8em; color: #002855; }
+        .ataud-text-container { display: flex; align-items: center; gap: 15px; margin-top: 20px; }
+        .ataud-text-container img { width: 60px; height: 60px; }
+        .options-list { margin-top: 20px; }
+        .content-container { margin-top: 30px; display: flex; flex-direction: column; align-items: center; }
+        .iframe-container { width: 100%; height: 1600px; border: none; display: block; }
+        table th { background-color: #337ab7 !important; color: white; }
+
+        /* Estilo para la opción activa, sin relleno azul */
+.active-option {
+    color: #002855; /* Color de texto para la opción activa (puedes cambiarlo) */
+    font-weight: bold; /* Hacer el texto más destacado */
+    border-left: 4px solid #002855; /* Añadir un borde a la izquierda para indicar que está seleccionada */
+}
+
+/* Estilo de las opciones cuando no están seleccionadas */
+.list-group-item {
+    cursor: pointer; /* Mostrar el cursor como una mano para indicar que es clickeable */
+}
+
+/* Opcionalmente, puedes añadir un estilo de hover */
+.list-group-item:hover {
+    background-color: #f1f1f1; /* Cambiar fondo al pasar el ratón */
+}
+
+    </style>
+</head>
+<body>
+
+<div class="container-fluid mt-4">
+    <!--<h2>Muertes violentas</h2>-->
+
+    <div class="ataud-text-container">
+        <img src="img/ataud.png" alt="Icono de ataúd">
+        <p>Se presenta información sobre los homicidios intencionales, no intencionales de homicidios y suicidios de Niñas, Niños y Adolescentes (NNA).</p>
+    </div>
+
+    <!-- Tabs con Bootstrap -->
+    <ul class="nav nav-tabs mt-4" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="homicidios-tab" data-toggle="tab" href="#homicidios" role="tab" aria-controls="homicidios" aria-selected="true">Homicidios</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="suicidios-tab" data-toggle="tab" href="#suicidios" role="tab" aria-controls="suicidios" aria-selected="false">Suicidios</a>
+        </li>
+    </ul>
+
+    <!-- Lista de opciones para subpestañas -->
+    <ul id="optionsList" class="list-group options-list"></ul>
+
+    <!-- Contenedor para el iframe -->
+    <div class="content-container">
+        <iframe id="subContentIframe" class="iframe-container" src=""></iframe>
+    </div>
+</div>
+
+<script>
+    // Datos de las opciones y sus URLs para cargar en el iframe
+    const options = {
+        homicidios: [
+            { title: "Tasa de homicidios de NNA de 0 a 17 años por cada 100,000 NNA, 2012-2022", url: "tasahomicidio0a17.html" },
+            { title: "Tasa de homicidios de NN en infancia media de 6 a 11 años por cada 100,000 NN, 2012-2022", url: "hom6a11.html" },
+            { title: "Tasa de homicidios de NN en primera infancia de 0 a 5 años por cada 100,000 NN, 2012-2022", url: "hom0a5.html" }
+        ],
+        suicidios: [
+            { title: "Tasa de suicidios de NNA de 0 a 17 años por cada 100,000 NNA, 2012-2022", url: "tasasuicidio0a17.html" },
+            { title: "Tasa de suicidios en adolescentes de 15 a 17 años, 2012-2022", url: "tasasuicidio15a17.html" }
+        ]
+    };
+
+    const optionsList = document.getElementById('optionsList');
+    const iframe = document.getElementById('subContentIframe');
+    let currentTab = null; // Variable para rastrear la pestaña activa
+
+    // Función para mostrar las opciones de una pestaña específica
+    function showOptions(tab) {
+        optionsList.innerHTML = '';
+        options[tab].forEach((option, index) => {
+            const listItem = document.createElement('li');
+            listItem.classList.add('list-group-item');
+            listItem.textContent = option.title;
+            listItem.dataset.url = option.url;
+            listItem.addEventListener('click', () => loadIframeContent(option.url, listItem));
+            optionsList.appendChild(listItem);
+
+            // Selecciona y carga la primera opción por defecto
+            if (index === 0) {
+                loadIframeContent(option.url, listItem);
+                listItem.classList.add('active-option'); // Marca como opción activa
+            }
+        });
+    }
+
+    // Función para cargar el contenido en el iframe y resaltar la opción seleccionada
+    function loadIframeContent(url, selectedItem) {
+        iframe.src = url;
+
+        // Quitar la clase 'active-option' de todas las opciones
+        const allItems = optionsList.querySelectorAll('.list-group-item');
+        allItems.forEach(item => item.classList.remove('active-option'));
+
+        // Agregar la clase 'active-option' a la opción seleccionada
+        selectedItem.classList.add('active-option');
+    }
+
+    // Inicializa la vista cargando las opciones de homicidios
+    document.addEventListener("DOMContentLoaded", () => {
+        showOptions('homicidios');
+        currentTab = 'homicidios';
+    });
+
+    // Eventos de clic para las pestañas que alternan las opciones
+    document.getElementById('homicidios-tab').addEventListener('click', () => {
+        if (currentTab !== 'homicidios') {
+            showOptions('homicidios');
+            currentTab = 'homicidios';
+        }
+    });
+
+    document.getElementById('suicidios-tab').addEventListener('click', () => {
+        if (currentTab !== 'suicidios') {
+            showOptions('suicidios');
+            currentTab = 'suicidios';
+        }
+    });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

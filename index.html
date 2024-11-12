@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INEGI - Demografía y Sociedad</title>
+    <!-- Bootstrap CSS -->
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Tu propio archivo de estilo CSS -->
+    <link rel="stylesheet" href="styles.css"> <!-- Asegúrate que este archivo exista y esté en el directorio correcto -->
+
+    <!-- Bootstrap Iconos (opcional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Primera sección: Logo e íconos de redes sociales -->
+<header class="header-top">
+    <div class="header-container">
+        <!-- Contenedor para el logo y 40 años -->
+        <div class="logo-group">
+            <div class="logo">
+                <img src="img/logo_INEGI.jpg" alt="INEGI Logo">
+            </div>
+            <div class="logo">
+                <img src="img/40años.jpg" alt="40 años Logo">
+            </div>
+        </div>
+        <!-- Redes sociales -->
+        <div class="social-iconsheader">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fas fa-rss"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+</header>
+
+<!-- Segunda sección: Barra de navegación -->
+<nav class="navbar-busqueda">
+    <div class="navbar-container">
+        <ul class="nav-links">
+            <li><a href="#">Temas</a></li>
+            <li><a href="#">Programas de información</a></li>
+            <li><a href="#">Sistemas de consulta</a></li>
+            <li><a href="#">Infraestructura</a></li>
+            <li><a href="#">Acerca de INEGI</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar...">
+            <button>Buscar</button>
+        </div>
+    </div>
+</nav>
+
+
+<div class="espaciogrande"></div>
+<section class="main-content">
+    <h1 class="heading">Sistema Integrado de Información de Violencia Contra Niñas, Niños y Adolescentes (SIIVINNA)</h1>
+    <div class="espaciomediano"></div>
+    <!---------------------------------- Contenedor Principal ----------------------------------------------------->
+    <div class="container-main">
+        <!-- Barra de navegación principal (gris) -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e0e6eb !important;">
+            <div class="container">
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav">
+                        <a class="nav-link active" id="nav-siivina" onclick="toggleActive(this, 'siivinaContent')">SIIVINA</a>
+                        <a class="nav-link" id="nav-sijpa" onclick="toggleActive(this, 'sijpaContent')">SIJPA</a>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    
+        <div class="container" id="mainContent"> <!-- id actualizado para evitar conflicto -->
+            <div id="siivinaContent" class="tab-content active">
+                <nav class="third-nav">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="resumen.html" data-class="resumen" id="tab-resumen">Resumen</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="muertes.html" data-class="muertes" id="tab-muerte">Defunciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tipos.html" data-class="otros-tipos" id="tab-tipos">Tipos de Violencia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contexto.html" data-class="otros-contexto" id="tab-contexto">Contexto</a>
+                        </li>
+                    </ul>
+                    
+                </nav>
+    
+                <iframe id="contentIframe" class="resumen" src="resumen.html" style="width: 100%; border: none;"></iframe>
+
+       
+</div> <!-- Cierra el contenido de siivina------------------------------------------------>
+<!---------------------------------------------------------- CONTENIDO DE SIJPA------------------------------------------------>
+<div id="sijpaContent" class="tab-content">
+    <nav class="third-nav">
+        <div class="container">
+            <!-- 
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" id="sijparesumen" onclick="updateTabContent(this)">Resumen</a>
+                </li>
+            </ul> -->
+        </div>
+    </nav>
+    <section class="main-content-modificado">
+        <div class="espaciomediano"></div>
+        <h2>Página en construcción</h2>
+        <div class="image-box-modificado">
+            <img src="img/sijpa.jfif" alt="pagina sijpa">
+        </div>
+    </section>
+</div> <!-- cierre del contenido de SIJPA------------------------------------------------>
+</div> <!-- cierre de id de js------------------------------------------------>
+<!-- Contendedor de enlaces------------------------------------------------>
+<h2 style="margin-left: 30px; color: #002855;">Herramientas especializadas de consulta</h2>
+<div class="espaciomediano"></div>
+<div class="contenedor-enlaces">
+    
+    <p>Estas ofrecen acceso a información más detallada. Además, permiten realizar búsquedas y consultas específicas sobre los temas de interés.</p>
+    
+    <ul class="lista-enlaces">
+        <li>
+          <a href="#">Banco de Indicadores 
+            <i class="fa-solid fa-up-right-from-square"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">Descarga masiva 
+            <i class="fa-solid fa-up-right-from-square"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">Espacio y datos de México 
+            <i class="fa-solid fa-up-right-from-square"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">Gráficas dinámicas 
+            <i class="fa-solid fa-up-right-from-square"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+<!-- Contendedor de pdfs------------------------------------------------>
+<div class="espaciomediano"></div>
+<h2 style="margin-left: 30px;">Publicaciones</h2>
+
+<div class="espaciomediano"></div>
+<div class="contenedorpdfs">
+    <p>Consulta y descarga aquí las publicaciones de tu interés:</p>
+
+    <div class="carrusel">
+      <div class="publicacion">
+        <img src="img/pdf1.PNG" alt="Publicación 1">
+      </div>
+      <div class="publicacion">
+        <img src="img/pdf2.PNG" alt="Publicación 2">
+      </div>
+      <div class="publicacion">
+        <img src="img/pdf3.PNG" alt="Publicación 3">
+      </div>
+      <div class="publicacion">
+        <img src="img/pdf4.PNG" alt="Publicación 4">
+      </div>
+      <div class="publicacion">
+        <img src="img/pdf5.PNG" alt="Publicación 5">
+      </div>
+      <div class="publicacion">
+        <img src="img/pdf6.PNG" alt="Publicación 5">
+      </div>
+    </div>
+
+    <div class="ver-mas">
+      <a href="#">Ver más <i class="fa-solid fa-up-right-from-square"></i></a>
+    </div>
+  </div>
+  <div class="espaciomediano"></div>
+            
+        </div> <!-- div que cierran el contenedor -->
+        
+
+    <div class="espaciogrande"></div>
+    </section>
+
+<!-- Pie de página -->
+<footer class="footer-section">
+    <div class="container footer-content">
+        <div class="footer-column">
+            <h4>Contacto</h4>
+            <div class="logo">
+                <img src="img/INEGI_contacto.png" alt="INEGI contacto">
+            </div>
+            <p>800 111 46 34</p>
+            <p><a href="mailto:atencion.usuarios@inegi.org.mx">atencion.usuarios@inegi.org.mx</a></p>
+            <p><a href="#">Chat</a></p>
+            <p><a href="#">Directorio</a></p>
+            <p><a href="#">Solicitud de información</a></p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fas fa-rss"></i></a>
+            </div>
+        </div>
+        <div class="footer-column">
+            <h4>Enlaces</h4>
+            <ul>
+                <li><a href="#">Investigación</a></li>
+                <li><a href="#">Sala de prensa</a></li>
+                <li><a href="#">Marco normativo</a></li>
+                <li><a href="#">Transparencia</a></li>
+                <li><a href="#">Desarrolladores</a></li>
+                <li><a href="#">Oportunidades de trabajo</a></li>
+                <li><a href="#">Véndale al INEGI</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Sitios de interés</h4>
+            <ul>
+                <li><a href="#">SNIEG</a></li>
+                <li><a href="#">Catálogo Nacional de Indicadores</a></li>
+                <li><a href="#">Cuéntame de México</a></li>
+                <li><a href="#">Objetivos de Desarrollo Sostenible</a></li>
+                <li><a href="#">Órgano Interno de Control</a></li>
+                <li><a href="#">Denuncias</a></li>
+                <li><a href="#">Enlaces de interés</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Mapa del sitio | Términos de uso | Accesibilidad</p>
+        <p>&copy; Derechos reservados © INEGI</p>
+    </div>
+</footer>
+
+    <!-- Bootstrap JS, Popper.js y jQuery -->
+    <!-- jQuery (versión completa) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- Popper.js para Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Tu archivo JS personalizado -->
+    <script src="script.js"></script>
+</body>
+</html>

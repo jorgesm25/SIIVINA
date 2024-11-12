@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasa de homicidios de NNA de 0 a 17 años</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- CSS personalizado --> 
+    <link rel="stylesheet" href="main.css">  
+      
+    <!--datables CSS básico-->
+    <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css"/>
+    <!--datables estilo bootstrap 4 CSS-->  
+    <link rel="stylesheet"  type="text/css" href="datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
+           
+    <!--font awesome con CDN-->  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">  
+    <!-- Bootstrap Iconos (opcional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        
+        .iframe-container {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+
+        .espaciomediano {
+    margin-bottom: 35px; /* Ajusta el valor según el espaciado deseado */
+  }
+
+  #infoAccordion .card {
+    margin-bottom: 5px; /* Espacio entre tarjetas */
+    border: 1px solid #c0c0c0; /* Color del borde */
+    border-radius: 0; /* Opcional: redondeo de bordes */
+}
+
+#infoAccordion .card .card-header {
+    background-color: #DCE1E5;
+    color: #002855;
+    padding: 15px;
+    font-weight: bold;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+      <h2 style="font-size: 1.8em; margin-bottom: 30px; color: #002855;">Tasa de homicidios de NNA de 0 a 17 años por cada 100,000 NNA, 2012-2022</h2>
+      <div style="display: flex; align-items: center;">
+          <div style="width: 30%; padding-right: 15px;">
+             <!-- Aqui inicia la parte de la información sobre la grafica----------------- -->
+             <div class="accordion" id="infoAccordion">
+                 <!-- Section 1 -->
+                 <div class="card">
+                     <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                         <i class="fas fa-book icon"></i> ¿Qué mide y cómo lo leo?
+                     </div>
+                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#infoAccordion">
+                         <div class="card-body">
+                             <p>Este indicador muestra el porcentaje del ingreso total que recibe cada decil de ingresos per cápita de una población...</p>
+                         </div>
+                     </div>
+                 </div>
+                 <!-- Section 2 -->
+                 <div class="card">
+                     <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                         <i class="fas fa-tools icon"></i> ¿Cómo se construye?
+                     </div>
+                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#infoAccordion">
+                         <div class="card-body">
+                             <p>Los deciles son aquellos puntos que permiten distribuir a una población en 10 grupos con el mismo número de integrantes...</p>
+                             <a href="ruta/del/metadato.pdf" target="_blank" style="color: blue; text-decoration: underline;">Consulta el metadato</a>
+                         </div>
+                     </div>
+                 </div>
+                 <!-- Section 3 -->
+                 <div class="card">
+                     <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                         <i class="fas fa-lightbulb icon"></i> ¿Para qué lo puedo utilizar?
+                     </div>
+                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#infoAccordion">
+                         <div class="card-body">
+                             <p>Este indicador se utiliza para analizar la distribución de ingresos en una población y entender...</p>
+                         </div>
+                     </div>
+                 </div>
+                 <!-- Section 4 -->
+                 <div class="card">
+                     <div class="card-header" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                         <i class="fas fa-map-marker-alt icon"></i> Comportamiento regional del indicador
+                     </div>
+                     <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#infoAccordion">
+                         <div class="card-body">
+                             <p>El comportamiento regional del indicador permite observar cómo varía la distribución de ingresos en diferentes regiones...</p>
+                         </div>
+                     </div>
+                 </div>
+             </div> <!-- aqui cierra el acordeon-->               
+          </div>
+          <div style="width: 70%;">
+            <iframe src="img/Piepagina.html" height="300"  class="iframe-container"></iframe>
+          </div>
+      </div>
+      
+      <div class="espaciomediano"></div>
+      <div class="espaciomediano"></div>
+      <!--Aqui empieza la segunda graficaaaaaaaaaaaaaaaaaaaaaaaaaaaaa--------------------------------------------->
+      <h2 style="font-size: 1.8em; margin-bottom: 30px; color: #002855;">Tasa de homicidios de NNA de 0 a 17 años por cada 100,000 NNA, 2012-2022</h2>
+
+        <div style="display: flex; align-items: center;">
+            <div style="width: 30%; padding-right: 15px;">
+                <p>Información detallada sobre la tasa de homicidios de niñas, niños y adolescentes entre 0 y 17 años en el período 2012-2022.</p>
+            </div>
+            <div style="width: 70%;">
+                <iframe src="img/Waffleviolencia.html" class="iframe-container"></iframe>
+            </div>
+        </div>
+        <div class="espaciomediano"></div>
+      <!--Aqui empieza la tercera graficaaaaaaaaaaaaaaaaaaaaaaaaaaaaa--------------------------------------------->
+      <h2 style="font-size: 1.8em; margin-bottom: 30px; color: #002855;">Tasa de homicidios de NNA de 0 a 17 años por cada 100,000 NNA, 2012-2022</h2>
+      <div style="display: flex; align-items: center;">
+        <div style="width: 100%;">
+            <iframe src="img/3dpagina.html" class="iframe-container"></iframe>
+        </div>
+    </div>
+        <div class="espaciomediano"></div>
+        <h2 style="font-size: 1.8em; margin-bottom: 30px; color: #002855;">Tasa de homicidios de NNA de 0 a 17 años por cada 100,000 NNA, 2012-2022</h2>
+        <!--Aqui empieza la tablaaaaaaaaaaaaaa--------------------------------------------->
+        <div style="display: flex; align-items: center;">
+            
+            <div style="width: 100%;">
+                <!--Ejemplo tabla con DataTables-->
+          <!--Ejemplo tabla con DataTables-->
+          <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="table-responsive">        
+                        <table class="table table-striped table-bordered dataTable" cellspacing="0" width="100%">
+                            <thead>
+                                <tr style="text-align: right;">
+                                  <th>Entidad</th>
+                                  <th>Total</th>
+                                  <th>Masculino</th>
+                                  <th>Femenino</th>
+                                  <th>Tasa</th>
+                                  <th>Tasa_Masculino</th>
+                                  <th>Tasa_Femenino</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Estados Unidos Mexicanos</td>
+                                  <td>1111.0</td>
+                                  <td>914.0</td>
+                                  <td>197.0</td>
+                                  <td>8.1591</td>
+                                  <td>13.2211</td>
+                                  <td>2.9387</td>
+                                </tr>
+                                <tr>
+                                  <td>Aguascalientes</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>Baja California</td>
+                                  <td>40.0</td>
+                                  <td>37.0</td>
+                                  <td>3.0</td>
+                                  <td>10.1056</td>
+                                  <td>18.2442</td>
+                                  <td>1.5543</td>
+                                </tr>
+                                <tr>
+                                  <td>Baja California Sur</td>
+                                  <td>1.0</td>
+                                  <td>0.0</td>
+                                  <td>1.0</td>
+                                  <td>1.1536</td>
+                                  <td>0.0000</td>
+                                  <td>2.3711</td>
+                                </tr>
+                                <tr>
+                                  <td>Campeche</td>
+                                  <td>1.0</td>
+                                  <td>1.0</td>
+                                  <td>0.0</td>
+                                  <td>1.0052</td>
+                                  <td>1.9728</td>
+                                  <td>0.0000</td>
+                                </tr>
+                                <tr>
+                                  <td>Coahuila de Zaragoza</td>
+                                  <td>5.0</td>
+                                  <td>1.0</td>
+                                  <td>4.0</td>
+                                  <td>1.4756</td>
+                                  <td>0.5790</td>
+                                  <td>2.4076</td>
+                                </tr>
+                                <tr>
+                                  <td>Colima</td>
+                                  <td>23.0</td>
+                                  <td>20.0</td>
+                                  <td>3.0</td>
+                                  <td>29.9639</td>
+                                  <td>50.9892</td>
+                                  <td>7.9925</td>
+                                </tr>
+                                <tr>
+                                  <td>Chiapas</td>
+                                  <td>13.0</td>
+                                  <td>8.0</td>
+                                  <td>5.0</td>
+                                  <td>1.8171</td>
+                                  <td>2.2176</td>
+                                  <td>1.4097</td>
+                                </tr>
+                                <tr>
+                                  <td>Chihuahua</td>
+                                  <td>62.0</td>
+                                  <td>49.0</td>
+                                  <td>13.0</td>
+                                  <td>15.0190</td>
+                                  <td>23.2849</td>
+                                  <td>6.4238</td>
+                                </tr>
+                                <tr>
+                                  <td>Ciudad de México</td>
+                                  <td>26.0</td>
+                                  <td>20.0</td>
+                                  <td>6.0</td>
+                                  <td>3.4116</td>
+                                  <td>5.1619</td>
+                                  <td>1.6015</td>
+                                </tr>
+                                <tr>
+                                  <td>Durango</td>
+                                  <td>4.0</td>
+                                  <td>4.0</td>
+                                  <td>0.0</td>
+                                  <td>1.8954</td>
+                                  <td>3.7173</td>
+                                  <td>0.0000</td>
+                                </tr>
+                                <tr>
+                                  <td>Guanajuato</td>
+                                  <td>190.0</td>
+                                  <td>153.0</td>
+                                  <td>37.0</td>
+                                  <td>27.7646</td>
+                                  <td>44.1296</td>
+                                  <td>10.9591</td>
+                                </tr>
+                                <tr>
+                                  <td>Guerrero</td>
+                                  <td>55.0</td>
+                                  <td>46.0</td>
+                                  <td>9.0</td>
+                                  <td>13.0811</td>
+                                  <td>21.6985</td>
+                                  <td>4.3174</td>
+                                </tr>
+                                <tr>
+                                  <td>Hidalgo</td>
+                                  <td>10.0</td>
+                                  <td>9.0</td>
+                                  <td>1.0</td>
+                                  <td>2.8379</td>
+                                  <td>5.0515</td>
+                                  <td>0.5740</td>
+                                </tr>
+                                <tr>
+                                  <td>Jalisco</td>
+                                  <td>40.0</td>
+                                  <td>34.0</td>
+                                  <td>6.0</td>
+                                  <td>4.4249</td>
+                                  <td>7.3868</td>
+                                  <td>1.3523</td>
+                                </tr>
+                                <tr>
+                                  <td>México</td>
+                                  <td>115.0</td>
+                                  <td>87.0</td>
+                                  <td>28.0</td>
+                                  <td>6.3652</td>
+                                  <td>9.5028</td>
+                                  <td>3.1419</td>
+                                </tr>
+                                <tr>
+                                  <td>Michoacán de Ocampo</td>
+                                  <td>107.0</td>
+                                  <td>92.0</td>
+                                  <td>15.0</td>
+                                  <td>20.1439</td>
+                                  <td>34.2236</td>
+                                  <td>5.7174</td>
+                                </tr>
+                                <tr>
+                                  <td>Morelos</td>
+                                  <td>44.0</td>
+                                  <td>34.0</td>
+                                  <td>10.0</td>
+                                  <td>21.4287</td>
+                                  <td>32.5359</td>
+                                  <td>9.9175</td>
+                                </tr>
+                                <tr>
+                                  <td>Nayarit</td>
+                                  <td>6.0</td>
+                                  <td>6.0</td>
+                                  <td>0.0</td>
+                                  <td>4.2633</td>
+                                  <td>8.3644</td>
+                                  <td>0.0000</td>
+                                </tr>
+                                <tr>
+                                  <td>Nuevo León</td>
+                                  <td>41.0</td>
+                                  <td>36.0</td>
+                                  <td>5.0</td>
+                                  <td>6.9166</td>
+                                  <td>11.9044</td>
+                                  <td>1.7219</td>
+                                </tr>
+                                <tr>
+                                  <td>Oaxaca</td>
+                                  <td>17.0</td>
+                                  <td>13.0</td>
+                                  <td>4.0</td>
+                                  <td>3.5529</td>
+                                  <td>5.3944</td>
+                                  <td>1.6843</td>
+                                </tr>
+                                <tr>
+                                  <td>Puebla</td>
+                                  <td>28.0</td>
+                                  <td>24.0</td>
+                                  <td>4.0</td>
+                                  <td>3.7134</td>
+                                  <td>6.2913</td>
+                                  <td>1.0737</td>
+                                </tr>
+                                <tr>
+                                  <td>Querétaro</td>
+                                  <td>6.0</td>
+                                  <td>3.0</td>
+                                  <td>3.0</td>
+                                  <td>2.3751</td>
+                                  <td>2.3424</td>
+                                  <td>2.4087</td>
+                                </tr>
+                                <tr>
+                                  <td>Quintana Roo</td>
+                                  <td>30.0</td>
+                                  <td>29.0</td>
+                                  <td>1.0</td>
+                                  <td>15.3265</td>
+                                  <td>29.1443</td>
+                                  <td>1.0391</td>
+                                </tr>
+                                <tr>
+                                  <td>San Luis Potosí</td>
+                                  <td>24.0</td>
+                                  <td>19.0</td>
+                                  <td>5.0</td>
+                                  <td>7.7020</td>
+                                  <td>12.0408</td>
+                                  <td>3.2507</td>
+                                </tr>
+                                <tr>
+                                  <td>Sinaloa</td>
+                                  <td>11.0</td>
+                                  <td>9.0</td>
+                                  <td>2.0</td>
+                                  <td>3.3857</td>
+                                  <td>5.4327</td>
+                                  <td>1.2560</td>
+                                </tr>
+                                <tr>
+                                  <td>Sonora</td>
+                                  <td>44.0</td>
+                                  <td>38.0</td>
+                                  <td>6.0</td>
+                                  <td>13.6840</td>
+                                  <td>23.0835</td>
+                                  <td>3.8235</td>
+                                </tr>
+                                <tr>
+                                  <td>Tabasco</td>
+                                  <td>12.0</td>
+                                  <td>8.0</td>
+                                  <td>4.0</td>
+                                  <td>4.4262</td>
+                                  <td>5.7962</td>
+                                  <td>3.0054</td>
+                                </tr>
+                                <tr>
+                                  <td>Tamaulipas</td>
+                                  <td>7.0</td>
+                                  <td>6.0</td>
+                                  <td>1.0</td>
+                                  <td>1.8515</td>
+                                  <td>3.1128</td>
+                                  <td>0.5396</td>
+                                </tr>
+                                <tr>
+                                  <td>Tlaxcala</td>
+                                  <td>7.0</td>
+                                  <td>7.0</td>
+                                  <td>0.0</td>
+                                  <td>4.5832</td>
+                                  <td>9.0191</td>
+                                  <td>0.0000</td>
+                                </tr>
+                                <tr>
+                                  <td>Veracruz de Ignacio de la Llave</td>
+                                  <td>22.0</td>
+                                  <td>15.0</td>
+                                  <td>7.0</td>
+                                  <td>2.5951</td>
+                                  <td>3.4830</td>
+                                  <td>1.6783</td>
+                                </tr>
+                                <tr>
+                                  <td>Yucatán</td>
+                                  <td>1.0</td>
+                                  <td>1.0</td>
+                                  <td>0.0</td>
+                                  <td>0.4136</td>
+                                  <td>0.8166</td>
+                                  <td>0.0000</td>
+                                </tr>
+                                <tr>
+                                  <td>Zacatecas</td>
+                                  <td>111.0</td>
+                                  <td>99.0</td>
+                                  <td>12.0</td>
+                                  <td>59.7066</td>
+                                  <td>105.2553</td>
+                                  <td>13.0645</td>
+                                </tr>
+                                <tr>
+                                  <td>No especificado</td>
+                                  <td>8.0</td>
+                                  <td>6.0</td>
+                                  <td>2.0</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>                           
+                        </tbody>        
+                       </table>                  
+                    </div>
+                </div>
+        </div>  
+    </div>    
+    
+            </div>
+        
+        
+        </div> <!--Este es el div de cierre del contenido-->
+
+        <div class="espaciomediano"></div>
+        <div class="espaciomediano"></div>
+
+        
+         <!-- jQuery, Popper.js, Bootstrap JS -->
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+    <script src="popper/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+        <!-- datatables JS -->
+        <script type="text/javascript" src="datatables/datatables.min.js"></script>    
+     
+        <!-- para usar botones en datatables JS -->  
+        <script src="datatables/Buttons-1.5.6/js/dataTables.buttons.min.js"></script>  
+        <script src="datatables/JSZip-2.5.0/jszip.min.js"></script>    
+        <script src="datatables/pdfmake-0.1.36/pdfmake.min.js"></script>    
+        <script src="datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
+        <script src="datatables/Buttons-1.5.6/js/buttons.html5.min.js"></script>
+         
+        <!-- código JS propìo-->    
+        <script type="text/javascript" src="main.js"></script>  
+</body>
+</html>

@@ -1,0 +1,657 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #EDEDED;
+    color: #333;
+}
+
+/* Header (Parte blanca) ----------------------------------------------*/
+/* Header (Parte blanca) */
+.header-top {
+    background-color: #fff;
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.heading {
+    max-width: 1100px; /* Establece el ancho máximo */
+    margin: 0 auto; /* Centra el encabezado */
+    text-align: left; /* Opcional: centra el texto */
+    color: #002855;
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos extremos */
+    align-items: center; /* Centra verticalmente */
+}
+
+/* Agrupación de logos */
+.logo-group {
+    display: flex; /* Alinea los logos uno al lado del otro */
+    align-items: center; /* Alinea las imágenes verticalmente */
+}
+
+.logo img {
+    height: 50px; /* Tamaño del logo */
+    margin-right: 10px; /* Espacio entre las dos imágenes */
+}
+
+.social-iconsheader a {
+    margin-left: 10px;
+    color: #435363; /* Color de los iconos */
+    font-size: 20px; /* Tamaño de los iconos */
+    transition: color 0.3s; /* Añadir una transición suave al color */
+}
+
+.social-iconsheader a:hover {
+    color: #0d8a9b; /* Color al pasar el mouse por encima */
+}
+
+
+/* Navbar (Barra gris oscura) ---------------------------------------------------------*/
+.navbar-busqueda {
+    background-color: #435363;
+    padding: 10px 0;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between; /* Separar elementos extremos */
+    align-items: center;
+    max-width: 1130px; /* Ancho máximo de la barra */
+    margin: 0 auto; /* Centrando el contenedor */
+    padding: 0 20px; /* Espaciado interno a los lados */
+}
+
+/* Ajustes en pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column; /* Cambia a columna en dispositivos pequeños */
+        margin-left: 20px; /* Reduce márgenes para pantallas móviles */
+        margin-right: 20px;
+        text-align: center; /* Alinea el texto al centro */
+    }
+
+    .nav-links {
+        display: block; /* Cambia los enlaces a bloques */
+        margin-bottom: 10px; /* Añade espacio entre los enlaces y la barra de búsqueda */
+    }
+
+    .search-bar {
+        display: flex;
+        justify-content: center; /* Centra la barra de búsqueda */
+        width: 100%; /* Asegura que tome todo el ancho */
+    }
+
+    .search-bar input {
+        width: 70%; /* Asegura que el input ocupe suficiente espacio */
+        margin-bottom: 10px;
+    }
+
+    .search-bar button {
+        width: 20%; /* Ajusta el tamaño del botón en pantallas pequeñas */
+    }
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+}
+
+.search-bar button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #3C77C8;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #45a049;
+}
+
+
+/* CONTENDEDOR PRINCIPAL QUE LLEVA TODO EL CONTENIDO DE LA PAGINA--------------------- */
+/* CONTENDEDOR PRINCIPAL QUE LLEVA TODO EL CONTENIDO DE LA PAGINA--------------------- */
+/* Estilo del contenedor */
+.container-main {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Barra de navegación */
+.navbar {
+    margin-bottom: 0;
+    height: 45px;
+    padding: 10px 0px;
+}
+
+/* Estilo para las pestañas normales */
+.sub-nav, .third-nav {
+    padding: 0;
+    border-bottom: 2px solid #DCE1E5;
+    margin-bottom: 0;
+}
+
+.third-nav {
+    border-bottom-color: #dee2e6;
+}
+
+/* Pestañas "SIIVINA" y "SIJPA" */
+.navbar-nav .nav-link {
+    color: #002855 !important; /* Color de texto gris para pestañas inactivas */
+    padding: 10px 25px;
+    background-color: #e0e6eb; /* Fondo gris para inactivas */
+    border-radius: 5px;
+    margin-right: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+}
+
+#nav-siivina {
+    margin-left: -15px; /* Ajusta este valor negativo según lo que necesites */
+}
+
+/* Pestaña activa "SIIVINA" o "SIJPA" */
+.navbar-nav .nav-link.active {
+    background-color: white; /* Fondo blanco para activas */
+    color: #007b8f; /* Texto azul para activas */
+    font-weight: bold;
+    border: 0; /* Sin borde */
+    border-radius: 0; /* Sin bordes redondos */
+}
+
+/* Hover effect para las pestañas inactivas */
+.navbar-nav .nav-link:hover {
+    background-color: #d1d9e0; /* Cambio de fondo en hover */
+    color: #007b8f; /* Cambio de color del texto en hover */
+}
+
+/* Pestañas secundarias (Resúmen, Muertes violentas, etc.) */
+.sub-nav a, .third-nav a {
+    color: #555;
+    padding: 10px 15px;
+}
+
+/* Pestaña secundaria activa */
+.sub-nav a.active, .third-nav a.active {
+    color: #007b8f;
+    font-weight: bold;
+    border-bottom: 3px solid #007b8f;
+}
+
+/* Contenido de las pestañas */
+.tab-content {
+    display: none; /* Ocultar todos los contenidos por defecto */
+}
+
+.tab-content.active {
+    display: block; /* Mostrar solo el contenido activo */
+}
+
+
+
+/* EspacioGrande */
+.espaciogrande {
+    margin-bottom: 60px; /* Ajusta el valor según el espaciado deseado */
+  }
+
+/* Espaciomediano */
+.espaciomediano {
+    margin-bottom: 35px; /* Ajusta el valor según el espaciado deseado */
+  }
+
+/*cartas rectangulares e imagen -------------------------------------------------------- */
+/* Contenedor principal con flechas */
+.container-modificado-flechas {
+    display: flex;
+    justify-content: space-between; /* Distribuye las tarjetas con espacio entre ellas */
+    align-items: top;
+    max-width: 1300px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+}
+
+/* Tarjetas individuales */
+.step-card {
+    flex: 1;
+    margin: 0 10px;
+    border: 2px solid #007b8f;
+    border-radius: 8px;
+    padding: 10px;
+    position: relative;
+    background-color: white;
+}
+
+/* Flecha entre tarjetas */
+.step-card::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: -30px;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 30px solid #007b8f;
+    transform: translateY(-50%);
+}
+
+/* Elimina la flecha en la penúltima y última tarjeta */
+.step-card:nth-last-child(-n+2)::after {
+    display: none;
+}
+
+/* Estilo de encabezado dentro de las tarjetas */
+.header-modificado {
+    background-color: #007b8f;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Estilo de contenido dentro de las tarjetas */
+.description-modificado {
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #666;
+}
+/* Columna de imagen */
+.image-box-modificado {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+}
+
+.image-box-modificado img {
+    max-width: 170%;
+    border-radius: 8px;
+}
+
+.step-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2); /* Sombra para dar efecto de elevación */
+    transform: scale(1.05); /* Escala para hacer que "sobresalga" un poco */
+}
+
+
+/*Cartas---------------------------------------------------------------------------------------- */
+.stat-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.stat-number {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #007b8f;
+}
+
+.stat-description {
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #666;
+}
+
+.stat-card small {
+    font-size: 0.9em;
+    color: #999;
+}
+
+.stat-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/*esto hace que las tarjetas se muevan*/
+.stat-card:hover {
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2); /* Sombra para dar efecto de elevación */
+    transform: scale(1.05); /* Escala para hacer que "sobresalga" un poco */}
+
+/* 3 tarjetas gubernamental, privado, cuidadania------------------------------------------------------ */
+.info-section {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+.info-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Contenedor para las tarjetas */
+.info-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Estilo de cada tarjeta */
+.info-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 30%;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.info-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/*esto hace que las tarjetas se muevan*/
+.info-card:hover {
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2); /* Sombra para dar efecto de elevación */
+    transform: scale(1.05); /* Escala para hacer que "sobresalga" un poco */}
+
+
+/* Contenedor de los íconos */
+.icon-container {
+    margin-bottom: 15px;
+}
+
+.icon-container img {
+    width: 50px;
+    height: auto;
+}
+
+/* Estilo del texto dentro de las tarjetas */
+.info-card h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #007b8f;
+}
+
+.info-card p {
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #666;
+}
+
+/* Adaptación para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .info-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-card {
+        width: 80%;
+        max-width: 400px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Contenedor de enlaces-------------------------------------------------------------------------------- */
+.contenedor-enlaces {
+    background-color: #f8f9fa;
+    border-radius: 0;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  p {
+    margin-bottom: 15px;
+    color: #555;
+  }
+  
+  /* Estilos de la lista de enlaces */
+  .lista-enlaces {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .lista-enlaces li {
+    margin-bottom: 10px;
+  }
+  
+  .lista-enlaces a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .lista-enlaces a:hover {
+    text-decoration: underline;
+  }
+/* Contenedor del pdf-------------------------------------------------------------------------------- */
+.contenedorpdfs {
+    background-color: #f8f9fa;
+    border-radius: 0;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+  
+h2 {
+    color: #002855;
+    margin-bottom: 5px;
+}
+  
+p {
+    margin-bottom: 15px;
+    color: #555;
+}
+  
+/* Estilo del carrusel */
+.carrusel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+  
+.carrusel::-webkit-scrollbar {
+    height: 8px;
+}
+  
+.carrusel::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+  
+.publicacion {
+    flex: 0 0 150px; /* Ancho fijo para cada publicación */
+    height: 200px; /* Altura fija para asegurar uniformidad */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+  
+.publicacion img {
+    width: 100%;
+    height: 100%; /* Asegura que la imagen ocupe toda la altura del contenedor */
+    object-fit: cover; /* Ajusta la imagen manteniendo la relación de aspecto */
+}
+
+/*esto hace que las tarjetas se muevan*/
+.publicacion:hover {
+    transform: translateY(-8px);
+    transition: transform 0.3s ease;
+}
+
+/* Botón Ver más */
+.ver-mas {
+    text-align: right;
+    margin-top: 10px;
+}
+  
+.ver-mas a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+}
+  
+.ver-mas a:hover {
+    text-decoration: underline;
+}
+
+
+/* Pie de página --------------------------------------------------------------------------------*/
+.footer-section {
+    background-color: #435363; /* Color de fondo principal (azul) */
+    color: white;
+    padding: 40px 0; /* Espacio superior e inferior */
+    font-family: Arial, sans-serif;
+}
+
+.footer-content {
+    max-width: 900px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-column h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.footer-column p, .footer-column a {
+    color: #dddddd;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+.social-icons a {
+    margin-right: 10px;
+    color: white;
+    font-size: 16px;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #666;
+    padding: 20px 0; /* Espacio en la parte superior e inferior */
+    color: #333; /* Color de texto en gris oscuro */
+    background-color: #d3d3d3; /* Fondo gris claro */
+    margin-top: -1px; /* Eliminar espacio entre el borde y el fondo gris */
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+/* Estilos generales para todos los iframes-------------------------------------------------------------------------------- */
+iframe {
+    width: 100%; 
+    height: 100%; /* Asegura que ocupe toda la altura asignada */
+    border: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    box-sizing: border-box;
+}
+
+/* Clase para el iframe de resumen */
+.resumen {
+    height: 1700px; /* Ajusta la altura según lo necesites */
+}
+
+/* Clase para el iframe de muertes */
+.muertes {
+    height: 2000px; /* Ajusta la altura según lo necesites */
+}
+
+/* Clase para otros tipos de iframe */
+.otros-tipos {
+    height: 1220px; /* Ajusta la altura según lo necesites */
+}
+
+/* Clase para el iframe de contexto */
+.otros-contexto {
+    height: 1200px; /* Ajusta la altura según lo necesites */
+}
